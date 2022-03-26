@@ -4,7 +4,7 @@ import { NextSeo } from 'next-seo';
 
 export async function getStaticPaths() {
 
-  // We need to fetch all of the categories from the DB
+  // We need to fetch all of the categories from our DB
   const res = await fetch('http://localhost:6400/products/categories')
   const categories = await res.json()
 
@@ -21,15 +21,16 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({params}) {
 
-  // Let's fetch the latest top ranking items in a category
+  // Let's fetch the latest top ranking items in a category from our DB
   const res = await fetch(`http://localhost:6400/products/category/${params.category}`)
   const products = await res.json()
 
-  // Let's pick the best ranked ones
+  // Let's pick the 5 best ranked ones
   const topProducts = products.sort((a,b) => b.rating - a.rating).slice(0, 5);
 
   // Every time we statically generate this page we will have the time stamped.
-  const stats = new Date().toISOString()//.toDateString();
+  const stats = new Date().toISOString()
+  
   return { 
     props: { stats: stats, topProducts },
     // Next.js will attempt to re-generate the page:
