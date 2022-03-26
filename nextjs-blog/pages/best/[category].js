@@ -28,9 +28,9 @@ export async function getStaticProps({params}) {
   // Let's pick the 5 best ranked ones
   const topProducts = products.sort((a,b) => b.rating - a.rating).slice(0, 5);
 
-  // Every time we statically generate this page we will have the time stamped.
+  // Every time we statically generate this page we will have the time-stamped.
   const stats = new Date().toISOString()
-  
+
   return { 
     props: { stats: stats, topProducts },
     // Next.js will attempt to re-generate the page:
