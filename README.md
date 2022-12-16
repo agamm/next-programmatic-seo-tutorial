@@ -4,7 +4,7 @@ A simplistic guide on how to use Next.js for a programmatic SEO project.
 
 Check more here: https://unzip.dev/0x003-programmatic-seo/
 
-Tutorial at: ...
+Tutorial at: https://dev.to/agamm/programmatic-seo-with-nextjs-pmh
 
 
 ### Notes
