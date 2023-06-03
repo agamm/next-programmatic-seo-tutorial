@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const faker = require('Faker'); // let's hope this doesn't break again ;)
+const { faker } = require('@faker-js/faker'); // it did in fact break again ;)
 
 const serverURL = 'http://127.0.0.1:6400';
 
